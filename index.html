@@ -32,10 +32,10 @@
             --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             --border-radius-main: 2px; /* Mantener bordes orgánicos rectos */
             
-            /* Estilo Blur Suave (Glassmorphism Utility) */
-            --glass-bg: rgba(255, 255, 255, 0.75); /* Un poco más opaco para legibilidad superior */
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --glass-blur: blur(20px); /* Desenfoque más profundo */
+            /* MODIFICADO: Estilo Neblina Avanzado (Mucha transparencia y mucho blur) */
+            --glass-bg: rgba(255, 255, 255, 0.45); /* Mucho más transparente para efecto neblina */
+            --glass-border: rgba(255, 255, 255, 0.15); /* Borde más sutil */
+            --glass-blur: blur(35px); /* Desenfoque profundo para aspecto difuso */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,7 +48,7 @@
             line-height: 1.8;
             overflow-x: hidden;
             
-            /* FONDO GENERAL (Asegúrate que este archivo existe en GitHub) */
+            /* FONDO GENERAL */
             background-image: url('fondo-suave.png');
             background-size: cover;
             background-attachment: fixed;
@@ -80,8 +80,8 @@
             padding: 15px 5%; 
             z-index: 1000;
             transition: var(--transition-smooth);
-            background: rgba(240, 236, 228, 0.9); /* Lino con opacidad */
-            backdrop-filter: blur(20px); /* Desenfoque más fuerte */
+            background: rgba(240, 236, 228, 0.7); /* Lino más transparente */
+            backdrop-filter: blur(25px); /* Desenfoque más fuerte */
             border-bottom: 1px solid rgba(232, 224, 212, 0.5);
             box-shadow: 0 5px 15px rgba(42, 37, 32, 0.05);
         }
@@ -94,10 +94,9 @@
             margin: 0 auto;
         }
 
-        /* CORRECCIÓN LOGO HEADER (Imagen 5 de historial) */
+        /* LOGO HEADER: Agrandado y usando logo-nativa-sinfondo.png */
         .logo-nav { 
-            /* MODIFICACIÓN CLAVE: TAMAÑO MUCHO MÁS GRANDE */
-            max-height: 120px; /* Anteriormente 60px */
+            max-height: 120px; 
             width: auto; 
             transition: var(--transition-smooth);
             transform-origin: left center;
@@ -126,7 +125,7 @@
         .nav-links a:hover::after { width: 100%; }
         .nav-links a.active { color: var(--oliva); font-weight: 600; }
 
-        /* --- Hero Section (Asegúrate que hero-nativa.png existe en GitHub) --- */
+        /* --- Hero Section --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -199,18 +198,18 @@
             align-items: center;
         }
 
-        /* --- Clase Utilidad: Recuadro Blur Suave (Glassmorphism Corregido) --- */
+        /* --- Clase Utilidad: MODIFICADO: Recuadro Blur Suave (Neblina Profunda) --- */
         .blurred-block {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
-            backdrop-filter: var(--glass-blur);
+            backdrop-filter: var(--glass-blur); /* Efecto difuso profundo */
             border-radius: var(--border-radius-main);
             padding: 50px;
-            box-shadow: 0 15px 40px rgba(42, 37, 32, 0.08);
+            box-shadow: 0 10px 30px rgba(42, 37, 32, 0.05); /* Sombra más sutil */
         }
         
         .blurred-block h3 { color: var(--oliva); }
-        .blurred-block p { color: var(--text-dark); }
+        .blurred-block p { color: var(--text-dark); } /* Texto oscuro se mantiene legible */
 
         .img-wrap {
             position: relative;
@@ -221,7 +220,7 @@
 
         .img-wrap img { width: 100%; height: auto; display: block; }
 
-        /* --- Sección de Marca (Fondo suave) --- */
+        /* --- Sección de Marca (Inmersiva con fondo suave) --- */
         .section-brand-immersive {
             background-image: linear-gradient(rgba(240, 236, 228, 0.7), rgba(240, 236, 228, 0.7)), url('fondo-suave.png');
             background-size: cover;
@@ -241,7 +240,7 @@
         
         .brand-text-large { font-size: 1.2rem; margin-bottom: 50px; }
 
-        /* --- Sección de Cualidades CBD & DeepOli (Asegúrate que ambiente-lino.png existe) --- */
+        /* --- Sección de Cualidades CBD & DeepOli --- */
         .qualities-text-block {
             padding: 30px;
         }
@@ -292,14 +291,14 @@
         /* --- Footer (Vidriomorfismo Suave) --- */
         footer {
             background-color: var(--white);
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.6); /* Más transparente consistente con neblina */
+            backdrop-filter: blur(25px); /* Desenfoque más fuerte */
             padding: 80px 5%;
             text-align: center;
             border-top: 1px solid rgba(232, 224, 212, 0.5);
         }
 
-        /* CORRECCIÓN LOGO FOOTER (Mantenemos tamaño adecuado) */
+        /* LOGO FOOTER CORREGIDO (logo-nativa-sinfondo.png) */
         .logo-footer { max-height: 90px; margin-bottom: 40px; }
         
         .insta-link { 
@@ -359,7 +358,7 @@
     <header>
         <nav>
             <a href="index.html">
-                <img src="logo-nativa.png" alt="Nativa Oli - Cannabis Medicinal Artesanal" class="logo-nav">
+                <img src="logo-nativa-sinfondo.png" alt="Nativa Oli - Cannabis Medicinal Artesanal" class="logo-nav">
             </a>
             <div class="nav-links">
                 <a href="index.html" class="active">Inicio</a>
@@ -470,7 +469,7 @@
     </main>
 
     <footer>
-        <img src="logo-nativa.png" alt="Nativa Oli" class="logo-footer">
+        <img src="logo-nativa-sinfondo.png" alt="Nativa Oli" class="logo-footer">
         
         <div>
             <a href="https://www.instagram.com/nativa.oli" target="_blank" class="insta-link">@nativa.oli 🌿</a>

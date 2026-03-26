@@ -4,233 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nativa Oli - De la tierra a tu bienestar - Cannabis Medicinal Artesanal</title>
-    
-    <meta name="description" content="Descubre Nativa Oli, cannabis medicinal artesanal de alta calidad. Aceite CBD DeepOli para bienestar, relajación y alivio natural. Cultivado con conciencia en Argentina.">
-    <meta name="keywords" content="aceite cbd, cannabis medicinal, bienestar natural, nativa oli, deepoli, artesanal">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
-    
     <style>
         :root {
-            /* Paleta de Colores Oficial Nativa Oli */
-            --sage: #DBE8D0;
-            --oliva: #5A6B50;
-            --tierra: #2A2520; /* Nunca usar negro puro */
-            --lino: #F0ECE4;
-            --arena: #E8E0D4;
-            --piedra: #9A9088;
-            /* Variables de Transición */
+            --sage: #DBE8D0; --oliva: #5A6B50; --tierra: #2A2520;
+            --lino: #F0ECE4; --arena: #E8E0D4; --piedra: #9A9088;
             --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: 'Jost', sans-serif;
-            font-weight: 300;
-            color: var(--tierra);
-            background-color: var(--lino);
-            line-height: 1.8;
-            overflow-x: hidden;
-            background-image: url('ambiente-lino.jpg.png'); /* Textura de fondo sutil */
-            background-size: cover;
-            background-attachment: fixed;
+            font-family: 'Jost', sans-serif; font-weight: 300; color: var(--tierra);
+            background-color: var(--lino); line-height: 1.8; overflow-x: hidden;
+            background-image: url('ambiente-lino.png'); background-size: cover; background-attachment: fixed;
         }
-
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
-            letter-spacing: -0.5px;
-            margin-bottom: 20px;
-        }
-
-        h1 { font-size: 3.5rem; line-height: 1.1; }
-        h2 { font-size: 2.8rem; }
-        
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 20px; }
+        h1 { font-size: 3.5rem; line-height: 1.1; } h2 { font-size: 2.8rem; }
         a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
-
-        /* --- Header & Navegación --- */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 5%;
-            z-index: 1000;
-            transition: var(--transition-smooth);
-            background: rgba(240, 236, 228, 0.9); /* Lino con opacidad */
-            backdrop-filter: blur(10px); /* Microinteracción de vidriomorfismo */
+            position: fixed; top: 0; left: 0; width: 100%; padding: 20px 5%; z-index: 1000;
+            background: rgba(240, 236, 228, 0.9); backdrop-filter: blur(10px);
         }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1600px; margin: 0 auto; }
         .logo-nav { max-height: 60px; }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-        }
-
-        .nav-links a { position: relative; }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0%;
-            height: 1px;
-            background-color: var(--oliva);
-            transition: var(--transition-smooth);
-        }
-        .nav-links a:hover::after { width: 100%; }
+        .nav-links { display: flex; gap: 40px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
         .nav-links a.active { color: var(--oliva); font-weight: 500; }
-
-        /* --- Hero Section --- */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: linear-gradient(rgba(42, 37, 32, 0.1), rgba(42, 37, 32, 0.4)), url('hero-nativa.jpg.png');
-            background-size: cover;
-            background-position: center;
-            color: var(--lino);
-            text-align: center;
-            padding: 0 10%;
-            position: relative;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            background-image: linear-gradient(rgba(42, 37, 32, 0.1), rgba(42, 37, 32, 0.4)), url('hero-nativa.png');
+            background-size: cover; background-position: center; color: var(--lino); text-align: center; padding: 0 10%;
         }
-
-        .hero-content {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInHero 1s ease-out forwards 0.5s;
-        }
-
+        .hero-content { opacity: 0; transform: translateY(30px); animation: fadeInHero 1s ease-out forwards 0.5s; }
         .hero h1 { max-width: 900px; font-weight: 300; }
-        .hero p { font-size: 1.2rem; font-weight: 200; letter-spacing: 3px; text-transform: uppercase; }
-
-        @keyframes fadeInHero {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- Scroll Narrativo (Efecto de Expansión) --- */
-        section {
-            min-height: 100vh;
-            padding: 100px 10%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Clase para el efecto de aparición */
-        .reveal-section {
-            opacity: 0;
-            transform: translateY(100px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-
-        .reveal-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .container {
-            max-width: 1400px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        /* --- Vidriomorfismo --- */
+        .hero p { font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; }
+        @keyframes fadeInHero { to { opacity: 1; transform: translateY(0); } }
+        section { min-height: 100vh; padding: 100px 10%; display: flex; align-items: center; justify-content: center; }
+        .reveal-section { opacity: 0; transform: translateY(100px); transition: opacity 1s ease-out, transform 1s ease-out; }
+        .reveal-section.visible { opacity: 1; transform: translateY(0); }
+        .container { max-width: 1400px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .glass-card {
-            background: rgba(255, 255, 255, 0.05); /* Muy sutil */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 2px; /* Mantener la calma, no curvas exageradas */
-            padding: 60px;
-            box-shadow: 0 15px 35px rgba(42, 37, 32, 0.1);
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px); border-radius: 2px; padding: 60px; box-shadow: 0 15px 35px rgba(42, 37, 32, 0.1);
         }
-
-        .img-wrap {
-            position: relative;
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(42, 37, 32, 0.15);
-        }
-
-        .img-wrap img { width: 100%; height: auto; display: block; }
-
-        /* --- Sección de Cualidades y Beneficios --- */
-        .grid-benefits {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 50px;
-        }
-
+        .grid-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
         .benefit-item h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--oliva); }
-        .benefit-item p { font-size: 1rem; color: var(--tierra); }
-
-        /* --- Sección Para Quién Es --- */
-        .client-list {
-            list-style: none;
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .client-list li {
-            padding-left: 30px;
-            position: relative;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .client-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--oliva);
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: var(--lino);
-            padding: 60px 5%;
-            text-align: center;
-            border-top: 1px solid var(--arena);
-        }
-
+        .client-list { list-style: none; margin-top: 40px; text-align: left; }
+        .client-list li { padding-left: 30px; position: relative; margin-bottom: 15px; font-size: 1.1rem; }
+        .client-list li::before { content: '•'; position: absolute; left: 0; color: var(--oliva); font-size: 1.5rem; }
+        footer { background-color: var(--lino); padding: 60px 5%; text-align: center; border-top: 1px solid var(--arena); }
         .logo-footer { max-height: 80px; margin-bottom: 30px; }
-        .insta-link { font-size: 1.2rem; color: var(--oliva); margin-bottom: 20px; display: inline-block; }
-        .medical-disclaimer {
-            font-size: 0.8rem;
-            color: var(--piedra);
-            max-width: 800px;
-            margin: 40px auto 0;
-            border-top: 1px solid var(--arena);
-            padding-top: 20px;
-        }
+        .medical-disclaimer { font-size: 0.8rem; color: var(--piedra); max-width: 800px; margin: 40px auto 0; border-top: 1px solid var(--arena); padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="logo-nativa.png" alt="Nativa Oli" class="logo-nav"></a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="tienda.html">Tienda</a>
+            </div>
+        </nav>
+    </header>
 
-        /* --- Media Queries (Mobile First) --- */
-        @media (max-width: 1024px) {
-            h1 { font-size: 2.8rem; }
-            h2 { font-size: 2.2rem; }
-            section { padding: 80px 5%; }
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <p>Nativa Oli</p>
+                <h1>De la tierra a tu bienestar.</h1>
+            </div>
+        </section>
+
+        <section id="marca" class="reveal-section">
+            <div class="container">
+                <div class="brand-text">
+                    <h2>Cultivado con conciencia.</h2>
+                    <p>En Nativa Oli, creemos en la pureza de lo artesanal. Cada gota de nuestro aceite de cannabis medicinal es el resultado de un proceso consciente, respetando los ciclos de la planta.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Filosofía de Calma</h3>
+                    <p>No corremos. Cuidamos cada etapa. Nuestra producción a pequeña escala garantiza que recibas un aceite libre de aditivos y lleno de intenciones positivas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios" class="reveal-section">
+            <div class="container">
+                <div class="benefits-text">
+                    <h2>Un alivio que se siente.</h2>
+                    <p>El aceite DeepOli interactúa de manera segura con tu sistema endocannabinoide, ayudándote a recuperar el equilibrio.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Principales Beneficios</h3>
+                    <div class="grid-benefits">
+                        <div class="benefit-item">
+                            <h3>Descanso Reparador</h3>
+                            <p>Mejora la calidad del sueño y reduce el insomnio.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>Calma la Ansiedad</h3>
+                            <p>Reduce los niveles de estrés y tensión mental.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>Alivio del Dolor</h3>
+                            <p>Acción antiinflamatoria para dolores crónicos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="para-quien" class="reveal-section">
+            <div class="container">
+                <div class="brand-text">
+                    <h2>Como un amigo que sabe.</h2>
+                    <p>Nativa Oli es para quienes buscan una alternativa natural, consciente y segura. No somos una cura mágica, somos una herramienta que te acompaña.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Ideal para personas con:</h3>
+                    <ul class="client-list">
+                        <li>Insomnio y trastornos del sueño.</li>
+                        <li>Estrés crónico o ansiedad.</li>
+                        <li>Dolores articulares y musculares.</li>
+                        <li>Ganas de mejorar su bienestar general.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="logo-nativa.png" alt="Nativa Oli" class="logo-footer">
+        <p class="medical-disclaimer">*NATIVA OLI promueve el uso consciente de cannabis medicinal. Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Consultá con tu médico antes de usar.</p>
+    </footer>
+
+    <script>
+        const revealSections = document.querySelectorAll('.reveal-section');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15 });
+        revealSections.forEach(section => sectionObserver.observe(section));
+    </script>
+</body>
+</html>

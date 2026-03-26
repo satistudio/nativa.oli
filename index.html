@@ -33,9 +33,9 @@
             --border-radius-main: 2px; /* Mantener bordes orgánicos rectos */
             
             /* Estilo Blur Suave (Glassmorphism Utility) */
-            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-bg: rgba(255, 255, 255, 0.75); /* Un poco más opaco para legibilidad superior */
             --glass-border: rgba(255, 255, 255, 0.2);
-            --glass-blur: blur(15px);
+            --glass-blur: blur(20px); /* Desenfoque más profundo */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,7 +48,7 @@
             line-height: 1.8;
             overflow-x: hidden;
             
-            /* NUEVO FONDO GENERAL (Basado en Imagen 5) */
+            /* FONDO GENERAL (Asegúrate que este archivo existe en GitHub) */
             background-image: url('fondo-suave.png');
             background-size: cover;
             background-attachment: fixed;
@@ -76,12 +76,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 5%;
+            /* AJUSTE DE PADDING PARA ADAPTAR LOGO MÁS GRANDE */
+            padding: 15px 5%; 
             z-index: 1000;
             transition: var(--transition-smooth);
-            background: rgba(240, 236, 228, 0.85); /* Lino con opacidad */
-            backdrop-filter: blur(15px); /* Desenfoque más fuerte */
+            background: rgba(240, 236, 228, 0.9); /* Lino con opacidad */
+            backdrop-filter: blur(20px); /* Desenfoque más fuerte */
             border-bottom: 1px solid rgba(232, 224, 212, 0.5);
+            box-shadow: 0 5px 15px rgba(42, 37, 32, 0.05);
         }
 
         nav {
@@ -92,8 +94,14 @@
             margin: 0 auto;
         }
 
-        /* CORRECCIÓN LOGO HEADER (Imagen 5) */
-        .logo-nav { max-height: 60px; }
+        /* CORRECCIÓN LOGO HEADER (Imagen 5 de historial) */
+        .logo-nav { 
+            /* MODIFICACIÓN CLAVE: TAMAÑO MUCHO MÁS GRANDE */
+            max-height: 120px; /* Anteriormente 60px */
+            width: auto; 
+            transition: var(--transition-smooth);
+            transform-origin: left center;
+        }
 
         .nav-links {
             display: flex;
@@ -118,7 +126,7 @@
         .nav-links a:hover::after { width: 100%; }
         .nav-links a.active { color: var(--oliva); font-weight: 600; }
 
-        /* --- Hero Section (Imagen 5) --- */
+        /* --- Hero Section (Asegúrate que hero-nativa.png existe en GitHub) --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -191,7 +199,7 @@
             align-items: center;
         }
 
-        /* --- Clase Utilidad: Recuadro Blur Suave (Corregido Legibilidad) --- */
+        /* --- Clase Utilidad: Recuadro Blur Suave (Glassmorphism Corregido) --- */
         .blurred-block {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -213,7 +221,7 @@
 
         .img-wrap img { width: 100%; height: auto; display: block; }
 
-        /* --- Sección de Marca (Inmersiva con fondo suave) --- */
+        /* --- Sección de Marca (Fondo suave) --- */
         .section-brand-immersive {
             background-image: linear-gradient(rgba(240, 236, 228, 0.7), rgba(240, 236, 228, 0.7)), url('fondo-suave.png');
             background-size: cover;
@@ -233,7 +241,7 @@
         
         .brand-text-large { font-size: 1.2rem; margin-bottom: 50px; }
 
-        /* --- Sección de Cualidades CBD & DeepOli (Imagen 5) --- */
+        /* --- Sección de Cualidades CBD & DeepOli (Asegúrate que ambiente-lino.png existe) --- */
         .qualities-text-block {
             padding: 30px;
         }
@@ -284,14 +292,14 @@
         /* --- Footer (Vidriomorfismo Suave) --- */
         footer {
             background-color: var(--white);
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
             padding: 80px 5%;
             text-align: center;
             border-top: 1px solid rgba(232, 224, 212, 0.5);
         }
 
-        /* CORRECCIÓN LOGO FOOTER (Imagen 5) */
+        /* CORRECCIÓN LOGO FOOTER (Mantenemos tamaño adecuado) */
         .logo-footer { max-height: 90px; margin-bottom: 40px; }
         
         .insta-link { 
@@ -320,6 +328,7 @@
             h2 { font-size: 2.6rem; }
             .container { gap: 60px; }
             .blurred-block { padding: 50px; }
+            .logo-nav { max-height: 100px; } /* Adaptación para pantallas medianas */
         }
 
         @media (max-width: 1024px) {
@@ -327,11 +336,12 @@
             .container { grid-template-columns: 1fr; gap: 50px; text-align: center; }
             .img-wrap { max-width: 700px; margin: 0 auto; }
             .section-brand-immersive { padding: 120px 7%; }
+            header { padding: 10px 5%; } /* Reducir padding en mobile */
+            .logo-nav { max-height: 80px; } /* Adaptación para mobile */
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* Realmente usarías un menú hamburguesa aquí */
-            .logo-nav { max-height: 50px; }
+            .nav-links { display: none; } /* En mobile usar hamburguesa real en una web pro */
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; letter-spacing: 3px; }
             h2 { font-size: 2.2rem; }
@@ -343,7 +353,7 @@
 
     </style>
     
-    </head>
+</head>
 <body>
 
     <header>
@@ -473,23 +483,15 @@
 
     <script>
         const revealSections = document.querySelectorAll('.reveal-section');
-
         const sectionObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Opcional: deja de observar después de aparecer
                     observer.unobserve(entry.target); 
                 }
             });
-        }, {
-            threshold: 0.15, // Porcentaje de la sección visible para activar
-            rootMargin: '0px 0px -100px 0px' // Margen para que aparezca antes de llegar al borde
-        });
-
-        revealSections.forEach(section => {
-            sectionObserver.observe(section);
-        });
+        }, { threshold: 0.15, rootMargin: '0px 0px -100px 0px' });
+        revealSections.forEach(section => sectionObserver.observe(section));
     </script>
 </body>
 </html>

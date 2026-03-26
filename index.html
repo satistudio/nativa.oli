@@ -14,14 +14,14 @@
     
     <style>
         :root {
-            /* Paleta de Colores Oficial */
+            /* Paleta de Colores Oficial Nativa Oli */
             --sage: #DBE8D0;
             --oliva: #5A6B50;
             --tierra: #2A2520; /* Color original de marca */
             
-            /* Nuevos Colores para Mejorar Legibilidad */
-            --text-main: #2A2520; /* Color original para headings */
-            --text-dark: #12100E; /* Color más oscuro para cuerpo de texto */
+            /* Colores para Texto y Legibilidad */
+            --text-main: #2A2520; /* Color original headings */
+            --text-dark: #12100E; /* Más oscuro para cuerpo */
             
             --lino: #F0ECE4;
             --arena: #E8E0D4;
@@ -30,7 +30,12 @@
 
             /* Variables de Diseño */
             --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            --border-radius-main: 2px; /* Mantener la calma con bordes rectos */
+            --border-radius-main: 2px; /* Mantener bordes orgánicos rectos */
+            
+            /* Estilo Blur Suave (Glassmorphism Utility) */
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-blur: blur(15px);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,14 +48,14 @@
             line-height: 1.8;
             overflow-x: hidden;
             
-            /* NUEVO FONDO GENERAL */
+            /* NUEVO FONDO GENERAL (Basado en Imagen 5) */
             background-image: url('fondo-suave.png');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
 
-        /* Estilos de Tipografía experimental de gran tamaño (Headings) */
+        /* Tipografía de Headings */
         h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600; /* Peso aumentado */
@@ -65,7 +70,7 @@
         
         a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
 
-        /* --- Header & Navegación Fixed (Vidriomorfismo Sutil) --- */
+        /* --- Header & Navegación Fixed (Con Vidriomorfismo Sutil) --- */
         header {
             position: fixed;
             top: 0;
@@ -87,7 +92,7 @@
             margin: 0 auto;
         }
 
-        /* LOGO SIN FONDO EN EL HEADER */
+        /* CORRECCIÓN LOGO HEADER (Imagen 5) */
         .logo-nav { max-height: 60px; }
 
         .nav-links {
@@ -113,7 +118,7 @@
         .nav-links a:hover::after { width: 100%; }
         .nav-links a.active { color: var(--oliva); font-weight: 600; }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section (Imagen 5) --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -165,7 +170,7 @@
             z-index: 10;
         }
 
-        /* Clase para el efecto de aparición suave */
+        /* Efecto de aparición suave */
         .reveal-section {
             opacity: 0;
             transform: translateY(100px);
@@ -186,18 +191,18 @@
             align-items: center;
         }
 
-        /* --- Vidriomorfismo ( Glass Card - Corregido para Legibilidad) --- */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85); /* Mucho más opaco para que el texto se lea bien */
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(25px); /* Desenfoque más fuerte */
+        /* --- Clase Utilidad: Recuadro Blur Suave (Corregido Legibilidad) --- */
+        .blurred-block {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-blur);
             border-radius: var(--border-radius-main);
-            padding: 70px;
-            box-shadow: 0 20px 50px rgba(42, 37, 32, 0.1);
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(42, 37, 32, 0.08);
         }
         
-        .glass-card h3 { color: var(--oliva); }
-        .glass-card p { color: var(--text-dark); }
+        .blurred-block h3 { color: var(--oliva); }
+        .blurred-block p { color: var(--text-dark); }
 
         .img-wrap {
             position: relative;
@@ -208,9 +213,9 @@
 
         .img-wrap img { width: 100%; height: auto; display: block; }
 
-        /* --- Sección de Marca (Inmersiva con imagen de escenas) --- */
+        /* --- Sección de Marca (Inmersiva con fondo suave) --- */
         .section-brand-immersive {
-            background-image: linear-gradient(rgba(240, 236, 228, 0.7), rgba(240, 236, 228, 0.7)), url('image_59ecc1.png');
+            background-image: linear-gradient(rgba(240, 236, 228, 0.7), rgba(240, 236, 228, 0.7)), url('fondo-suave.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -228,7 +233,11 @@
         
         .brand-text-large { font-size: 1.2rem; margin-bottom: 50px; }
 
-        /* --- Sección de Cualidades y Beneficios --- */
+        /* --- Sección de Cualidades CBD & DeepOli (Imagen 5) --- */
+        .qualities-text-block {
+            padding: 30px;
+        }
+
         .grid-benefits {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -239,7 +248,12 @@
         .benefit-item h3 { font-size: 1.6rem; margin-bottom: 15px; }
         .benefit-item p { font-size: 1.05rem; }
 
-        /* --- Sección Para Quién Es (Centrado y Narrativo) --- */
+        /* --- Sección Beneficios (Aplicando Blur Suave al texto) --- */
+        .benefits-text {
+            padding: 30px;
+        }
+
+        /* --- Sección Para Quién Es (Nuevos fondos blur suaves) --- */
         .section-who-it-is { text-align: center; }
         .who-it-is-content { display: flex; flex-direction: column; align-items: center; max-width: 900px; margin: 0 auto;}
         
@@ -267,7 +281,7 @@
             line-height: 1;
         }
 
-        /* --- Footer (Vidriomorfismo) --- */
+        /* --- Footer (Vidriomorfismo Suave) --- */
         footer {
             background-color: var(--white);
             background: rgba(255, 255, 255, 0.8);
@@ -277,7 +291,7 @@
             border-top: 1px solid rgba(232, 224, 212, 0.5);
         }
 
-        /* LOGO SIN FONDO EN EL FOOTER */
+        /* CORRECCIÓN LOGO FOOTER (Imagen 5) */
         .logo-footer { max-height: 90px; margin-bottom: 40px; }
         
         .insta-link { 
@@ -305,7 +319,7 @@
             h1 { font-size: 3.2rem; }
             h2 { font-size: 2.6rem; }
             .container { gap: 60px; }
-            .glass-card { padding: 50px; }
+            .blurred-block { padding: 50px; }
         }
 
         @media (max-width: 1024px) {
@@ -316,25 +330,26 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* En una web real, usarías un menú hamburguesa */
+            .nav-links { display: none; } /* Realmente usarías un menú hamburguesa aquí */
             .logo-nav { max-height: 50px; }
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; letter-spacing: 3px; }
             h2 { font-size: 2.2rem; }
             h3 { font-size: 1.8rem; }
-            .glass-card { padding: 35px; }
+            .blurred-block { padding: 35px; }
             .grid-benefits { grid-template-columns: 1fr; gap: 30px; text-align: left;}
             .client-list li { font-size: 1rem; }
         }
 
     </style>
-</head>
+    
+    </head>
 <body>
 
     <header>
         <nav>
             <a href="index.html">
-                <img src="logo-nativa-sinfondo.png" alt="Nativa Oli - Cannabis Medicinal Artesanal" class="logo-nav">
+                <img src="logo-nativa.png" alt="Nativa Oli - Cannabis Medicinal Artesanal" class="logo-nav">
             </a>
             <div class="nav-links">
                 <a href="index.html" class="active">Inicio</a>
@@ -354,7 +369,7 @@
 
         <section id="marca" class="section-brand-immersive reveal-section">
             <div class="brand-content">
-                <div class="glass-card">
+                <div class="blurred-block">
                     <h2>Cultivado con conciencia.</h2>
                     <p class="brand-text-large">En Nativa Oli, creemos en la pureza de lo artesanal. Nuestra misión es tender un puente entre la sabiduría de la tierra y tu bienestar diario. Cada gota de nuestro aceite de cannabis medicinal es el resultado de un proceso consciente, respetando los ciclos de la planta para entregarte un producto honesto y eficaz.</p>
                     
@@ -367,9 +382,9 @@
         <section id="cualidades" class="reveal-section">
             <div class="container">
                 <div class="img-wrap">
-                    <img src="image_59ece0.png" alt="Elaboración artesanal de Nativa Oli">
+                    <img src="ambiente-lino.png" alt="Elaboración artesanal de Nativa Oli">
                 </div>
-                <div class="qualities-text">
+                <div class="qualities-text-block blurred-block">
                     <h2>Pureza y Potencia Natural.</h2>
                     <p>Nuestro primer producto, **DeepOli**, está diseñado para integrarse suavemente en tu rutina. Utilizamos un método de extracción delicado que preserva el espectro completo de la planta (Full Spectrum).</p>
                     
@@ -393,12 +408,12 @@
 
         <section id="beneficios" class="reveal-section">
             <div class="container">
-                <div class="benefits-text">
+                <div class="benefits-text blurred-block">
                     <h2>Un alivio que se siente.</h2>
                     <p>El aceite DeepOli interactúa de manera segura con tu sistema endocannabinoide, ayudándote a recuperar el equilibrio natural.</p>
                 </div>
                 
-                <div class="glass-card">
+                <div class="blurred-block">
                     <h3>Principales Beneficios</h3>
                     <div class="grid-benefits">
                         <div class="benefit-item">
@@ -424,12 +439,12 @@
 
         <section id="para-quien" class="section-who-it-is reveal-section">
             <div class="who-it-is-content">
-                <div class="brand-text">
+                <div class="brand-text blurred-block" style="margin-bottom: 50px; width: 100%;">
                     <h2>Como un amigo que sabe.</h2>
                     <p>Nativa Oli es para quienes buscan una alternativa natural, consciente y segura para mejorar su calidad de vida. No somos una "cura mágica", somos una herramienta honesta y transparente que te acompaña en tu proceso.</p>
                 </div>
                 
-                <div class="glass-card">
+                <div class="blurred-block" style="width: 100%;">
                     <h3>Ideal para personas con:</h3>
                     <ul class="client-list">
                         <li>Insomnio y trastornos del sueño.</li>
@@ -445,7 +460,7 @@
     </main>
 
     <footer>
-        <img src="logo-nativa-sinfondo.png" alt="Nativa Oli" class="logo-footer">
+        <img src="logo-nativa.png" alt="Nativa Oli" class="logo-footer">
         
         <div>
             <a href="https://www.instagram.com/nativa.oli" target="_blank" class="insta-link">@nativa.oli 🌿</a>

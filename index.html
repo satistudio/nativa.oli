@@ -17,22 +17,23 @@
             /* Paleta de Colores Oficial Nativa Oli */
             --sage: #DBE8D0;
             --oliva: #5A6B50;
-            --tierra: #2A2520;
+            --tierra: #2A2520; /* Color original de marca */
             
             /* Colores para Texto y Legibilidad */
-            --text-main: #2A2520; 
-            --text-dark: #12100E; 
+            --text-main: #2A2520; /* Color headings original */
+            --text-dark: #12100E; /* Más oscuro para cuerpo */
             
             --lino: #F0ECE4;
             --arena: #E8E0D4;
             --piedra: #9A9088;
             --white: #FFFFFF;
 
-            /* Variables de Diseño */
+            /* Variables de Diseño Senior */
             --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            --border-radius-main: 2px;
+            /* MODIFICADO: BORDES REDONDEADOS SUAVES (Inspiración en chat) */
+            --border-radius-main: 20px; 
             
-            /* Estilo Neblina Avanzado */
+            /* Estilo Neblina Avanzado (Vidriomorfismo Senior) */
             --glass-bg: rgba(255, 255, 255, 0.45);
             --glass-border: rgba(255, 255, 255, 0.15); 
             --glass-blur: blur(35px); 
@@ -48,14 +49,14 @@
             line-height: 1.8;
             overflow-x: hidden;
             
-            /* FONDO GENERAL */
+            /* FONDO GENERAL (Asegúrate que este archivo existe en GitHub) */
             background-image: url('fondo-suave.png');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
         }
 
-        /* Tipografía de Headings */
+        /* Tipografía de Headings experimental */
         h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600; 
@@ -70,12 +71,13 @@
         
         a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
 
-        /* --- Header & Navegación Fixed --- */
+        /* --- Header & Navegación Fixed (Vidriomorfismo Senior) --- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            /* AJUSTE DE PADDING PARA ADAPTAR LOGO MÁS GRANDE */
             padding: 15px 5%; 
             z-index: 1000;
             transition: var(--transition-smooth);
@@ -83,6 +85,8 @@
             backdrop-filter: blur(25px); 
             border-bottom: 1px solid rgba(232, 224, 212, 0.5);
             box-shadow: 0 5px 15px rgba(42, 37, 32, 0.05);
+            /* MODIFICADO: BORDES REDONDEADOS */
+            border-radius: var(--border-radius-main);
         }
 
         nav {
@@ -93,9 +97,9 @@
             margin: 0 auto;
         }
 
-        /* LOGO HEADER MÁS GRANDE */
+        /* LOGO HEADER MUCHO MÁS GRANDE (Imagen 5 de historial) */
         .logo-nav { 
-            max-height: 160px; /* Aumentado de 120px a 160px */
+            max-height: 200px; /* Aumentado de 160px a 200px */
             width: auto; 
             transition: var(--transition-smooth);
             transform-origin: left center;
@@ -124,7 +128,7 @@
         .nav-links a:hover::after { width: 100%; }
         .nav-links a.active { color: var(--oliva); font-weight: 600; }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section (Fondo hero-nativa.png) --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -196,7 +200,7 @@
             align-items: center;
         }
 
-        /* --- Clase Utilidad: Recuadro Blur Suave (Neblina Profunda) --- */
+        /* --- Clase Utilidad: Recuadro Blur Suave (Neblina Profunda Senior) --- */
         .blurred-block {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -238,7 +242,7 @@
         
         .brand-text-large { font-size: 1.2rem; margin-bottom: 50px; }
 
-        /* --- Sección de Cualidades CBD & DeepOli --- */
+        /* --- Sección de Cualidades CBD & DeepOli (Imagen ambiente-lino.png) --- */
         .qualities-text-block {
             padding: 30px;
         }
@@ -286,7 +290,7 @@
             line-height: 1;
         }
 
-        /* --- Footer --- */
+        /* --- Footer (Vidriomorfismo Senior) --- */
         footer {
             background-color: var(--white);
             background: rgba(255, 255, 255, 0.6); 
@@ -294,20 +298,38 @@
             padding: 80px 5%;
             text-align: center;
             border-top: 1px solid rgba(232, 224, 212, 0.5);
+            /* MODIFICADO: BORDES REDONDEADOS */
+            border-radius: var(--border-radius-main);
+            position: relative; /* Para positioning senior del logo */
         }
 
-        /* LOGO FOOTER MÁS GRANDE */
-        .logo-footer { max-height: 150px; margin-bottom: 40px; } /* Aumentado de 90px a 150px */
+        /* LOGO FOOTER MUCHO MÁS GRANDE (Imagen 5 de historial) */
+        .logo-footer { 
+            max-height: 250px; /* Aumentado de 150px a 250px */
+            width: auto; 
+            margin-bottom: 40px; 
+            transition: var(--transition-smooth);
+        } 
         
         .insta-link { 
             font-size: 1.3rem; 
             color: var(--oliva); 
-            margin-bottom: 25px; 
+            margin-bottom: 10px; 
             display: inline-block; 
             font-weight: 500;
         }
         
         .insta-link:hover { color: var(--piedra); }
+
+        /* MODIFICADO: BOTÓN DE INSTAGRAM EN EL FOOTER */
+        .insta-container {
+            display: flex; gap: 20px; justify-content: center; align-items: center; margin-bottom: 25px;
+        }
+        .btn-instagram {
+            background-color: var(--oliva); color: var(--white); padding: 10px 25px; border: none; border-radius: 20px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; cursor: pointer; transition: var(--transition-smooth); display: flex; align-items: center; gap: 10px;
+        }
+        .btn-instagram:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(90, 107, 80, 0.2); }
+        .insta-icon { width: 18px; height: 18px; fill: var(--white); }
 
         .medical-disclaimer {
             font-size: 0.85rem;
@@ -319,13 +341,20 @@
             line-height: 1.6;
         }
 
+        /* MODIFICADO: BOTÓN FLOTANTE DE WHATSAPP SENIOR */
+        .btn-whatsapp-floating {
+            position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: var(--oliva); color: var(--white); border-radius: 50%; box-shadow: 0 10px 25px rgba(90, 107, 80, 0.4); display: flex; justify-content: center; align-items: center; z-index: 2000; transition: var(--transition-smooth); border: 2px solid rgba(255,255,255,0.1);
+        }
+        .btn-whatsapp-floating:hover { transform: scale(1.1); box-shadow: 0 15px 35px rgba(90, 107, 80, 0.5); }
+        .whatsapp-icon { width: 30px; height: 30px; fill: var(--white); }
+
         /* --- Media Queries (Mobile First) --- */
         @media (max-width: 1200px) {
             h1 { font-size: 3.2rem; }
             h2 { font-size: 2.6rem; }
             .container { gap: 60px; }
             .blurred-block { padding: 50px; }
-            .logo-nav { max-height: 120px; } /* Adaptación */
+            .logo-nav { max-height: 160px; } /* Adaptación */
         }
 
         @media (max-width: 1024px) {
@@ -334,13 +363,13 @@
             .img-wrap { max-width: 700px; margin: 0 auto; }
             .section-brand-immersive { padding: 120px 7%; }
             header { padding: 10px 5%; } 
-            .logo-nav { max-height: 100px; } /* Adaptación */
-            .logo-footer { max-height: 120px; }
+            .logo-nav { max-height: 120px; } /* Adaptación */
+            .logo-footer { max-height: 200px; }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; } 
-            .logo-nav { max-height: 70px; } /* Adaptación para que no ocupe media pantalla en el celu */
+            .logo-nav { max-height: 90px; } /* Adaptación mobile senior */
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; letter-spacing: 3px; }
             h2 { font-size: 2.2rem; }
@@ -348,7 +377,10 @@
             .blurred-block { padding: 35px; }
             .grid-benefits { grid-template-columns: 1fr; gap: 30px; text-align: left;}
             .client-list li { font-size: 1rem; }
-            .logo-footer { max-height: 100px; }
+            .logo-footer { max-height: 150px; }
+            .btn-whatsapp-floating { width: 50px; height: 50px; bottom: 15px; right: 15px; }
+            .whatsapp-icon { width: 25px; height: 25px; }
+            h1 { font-size: 2.2rem; }
         }
 
     </style>
@@ -472,14 +504,22 @@
     <footer>
         <img src="logo-nativa-sinfondo.png" alt="Nativa Oli" class="logo-footer">
         
-        <div>
+        <div class="insta-container">
             <a href="https://www.instagram.com/nativa.oli" target="_blank" class="insta-link">@nativa.oli 🌿</a>
+            <button class="btn-instagram" onclick="window.open('https://www.instagram.com/nativa.oli', '_blank')">
+                <svg class="insta-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.069-1.644-.069-4.849 0-3.204 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                Instagram
+            </button>
         </div>
         
         <p class="medical-disclaimer">
             *NATIVA OLI promueve el uso consciente de cannabis medicinal. Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Las patologías específicas deben utilizarse con indicación médica. No apto para menores de 18 años. Consultá con tu médico antes de usar.
         </p>
     </footer>
+
+    <a href="https://wa.me/5491134472607?text=Hola%20Nativa%20🌿%2C%20vengo%20desde%20la%20web%20y%20quería%20consultar%20sobre%20tus%20productos." target="_blank" class="btn-whatsapp-floating" title="Contáctanos por WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-117zm-157 338.7h-.1c-33.2 0-65.7-8.9-93.9-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.6-30.6-38.1-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+    </a>
 
     <script>
         const revealSections = document.querySelectorAll('.reveal-section');

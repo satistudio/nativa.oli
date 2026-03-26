@@ -17,11 +17,11 @@
             /* Paleta de Colores Oficial Nativa Oli */
             --sage: #DBE8D0;
             --oliva: #5A6B50;
-            --tierra: #2A2520; /* Color original de marca */
+            --tierra: #2A2520;
             
             /* Colores para Texto y Legibilidad */
-            --text-main: #2A2520; /* Color original headings */
-            --text-dark: #12100E; /* Más oscuro para cuerpo */
+            --text-main: #2A2520; 
+            --text-dark: #12100E; 
             
             --lino: #F0ECE4;
             --arena: #E8E0D4;
@@ -30,20 +30,20 @@
 
             /* Variables de Diseño */
             --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            --border-radius-main: 2px; /* Mantener bordes orgánicos rectos */
+            --border-radius-main: 2px;
             
-            /* MODIFICADO: Estilo Neblina Avanzado (Mucha transparencia y mucho blur) */
-            --glass-bg: rgba(255, 255, 255, 0.45); /* Mucho más transparente para efecto neblina */
-            --glass-border: rgba(255, 255, 255, 0.15); /* Borde más sutil */
-            --glass-blur: blur(35px); /* Desenfoque profundo para aspecto difuso */
+            /* Estilo Neblina Avanzado */
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.15); 
+            --glass-blur: blur(35px); 
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Jost', sans-serif;
-            font-weight: 400; /* Peso aumentado para legibilidad */
-            color: var(--text-dark); /* Color más oscuro */
+            font-weight: 400; 
+            color: var(--text-dark); 
             background-color: var(--lino);
             line-height: 1.8;
             overflow-x: hidden;
@@ -58,7 +58,7 @@
         /* Tipografía de Headings */
         h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 600; /* Peso aumentado */
+            font-weight: 600; 
             letter-spacing: -0.5px;
             margin-bottom: 25px;
             color: var(--text-main);
@@ -70,18 +70,17 @@
         
         a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
 
-        /* --- Header & Navegación Fixed (Con Vidriomorfismo Sutil) --- */
+        /* --- Header & Navegación Fixed --- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            /* AJUSTE DE PADDING PARA ADAPTAR LOGO MÁS GRANDE */
             padding: 15px 5%; 
             z-index: 1000;
             transition: var(--transition-smooth);
-            background: rgba(240, 236, 228, 0.7); /* Lino más transparente */
-            backdrop-filter: blur(25px); /* Desenfoque más fuerte */
+            background: rgba(240, 236, 228, 0.7); 
+            backdrop-filter: blur(25px); 
             border-bottom: 1px solid rgba(232, 224, 212, 0.5);
             box-shadow: 0 5px 15px rgba(42, 37, 32, 0.05);
         }
@@ -94,9 +93,9 @@
             margin: 0 auto;
         }
 
-        /* LOGO HEADER: Agrandado y usando logo-nativa-sinfondo.png */
+        /* LOGO HEADER MÁS GRANDE */
         .logo-nav { 
-            max-height: 120px; 
+            max-height: 160px; /* Aumentado de 120px a 160px */
             width: auto; 
             transition: var(--transition-smooth);
             transform-origin: left center;
@@ -177,7 +176,6 @@
             z-index: 10;
         }
 
-        /* Efecto de aparición suave */
         .reveal-section {
             opacity: 0;
             transform: translateY(100px);
@@ -198,18 +196,18 @@
             align-items: center;
         }
 
-        /* --- Clase Utilidad: MODIFICADO: Recuadro Blur Suave (Neblina Profunda) --- */
+        /* --- Clase Utilidad: Recuadro Blur Suave (Neblina Profunda) --- */
         .blurred-block {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
-            backdrop-filter: var(--glass-blur); /* Efecto difuso profundo */
+            backdrop-filter: var(--glass-blur); 
             border-radius: var(--border-radius-main);
             padding: 50px;
-            box-shadow: 0 10px 30px rgba(42, 37, 32, 0.05); /* Sombra más sutil */
+            box-shadow: 0 10px 30px rgba(42, 37, 32, 0.05); 
         }
         
         .blurred-block h3 { color: var(--oliva); }
-        .blurred-block p { color: var(--text-dark); } /* Texto oscuro se mantiene legible */
+        .blurred-block p { color: var(--text-dark); } 
 
         .img-wrap {
             position: relative;
@@ -220,7 +218,7 @@
 
         .img-wrap img { width: 100%; height: auto; display: block; }
 
-        /* --- Sección de Marca (Inmersiva con fondo suave) --- */
+        /* --- Sección de Marca --- */
         .section-brand-immersive {
             background-image: linear-gradient(rgba(240, 236, 228, 0.7), rgba(240, 236, 228, 0.7)), url('fondo-suave.png');
             background-size: cover;
@@ -255,12 +253,12 @@
         .benefit-item h3 { font-size: 1.6rem; margin-bottom: 15px; }
         .benefit-item p { font-size: 1.05rem; }
 
-        /* --- Sección Beneficios (Aplicando Blur Suave al texto) --- */
+        /* --- Sección Beneficios --- */
         .benefits-text {
             padding: 30px;
         }
 
-        /* --- Sección Para Quién Es (Nuevos fondos blur suaves) --- */
+        /* --- Sección Para Quién Es --- */
         .section-who-it-is { text-align: center; }
         .who-it-is-content { display: flex; flex-direction: column; align-items: center; max-width: 900px; margin: 0 auto;}
         
@@ -288,18 +286,18 @@
             line-height: 1;
         }
 
-        /* --- Footer (Vidriomorfismo Suave) --- */
+        /* --- Footer --- */
         footer {
             background-color: var(--white);
-            background: rgba(255, 255, 255, 0.6); /* Más transparente consistente con neblina */
-            backdrop-filter: blur(25px); /* Desenfoque más fuerte */
+            background: rgba(255, 255, 255, 0.6); 
+            backdrop-filter: blur(25px); 
             padding: 80px 5%;
             text-align: center;
             border-top: 1px solid rgba(232, 224, 212, 0.5);
         }
 
-        /* LOGO FOOTER CORREGIDO (logo-nativa-sinfondo.png) */
-        .logo-footer { max-height: 90px; margin-bottom: 40px; }
+        /* LOGO FOOTER MÁS GRANDE */
+        .logo-footer { max-height: 150px; margin-bottom: 40px; } /* Aumentado de 90px a 150px */
         
         .insta-link { 
             font-size: 1.3rem; 
@@ -327,7 +325,7 @@
             h2 { font-size: 2.6rem; }
             .container { gap: 60px; }
             .blurred-block { padding: 50px; }
-            .logo-nav { max-height: 100px; } /* Adaptación para pantallas medianas */
+            .logo-nav { max-height: 120px; } /* Adaptación */
         }
 
         @media (max-width: 1024px) {
@@ -335,12 +333,14 @@
             .container { grid-template-columns: 1fr; gap: 50px; text-align: center; }
             .img-wrap { max-width: 700px; margin: 0 auto; }
             .section-brand-immersive { padding: 120px 7%; }
-            header { padding: 10px 5%; } /* Reducir padding en mobile */
-            .logo-nav { max-height: 80px; } /* Adaptación para mobile */
+            header { padding: 10px 5%; } 
+            .logo-nav { max-height: 100px; } /* Adaptación */
+            .logo-footer { max-height: 120px; }
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* En mobile usar hamburguesa real en una web pro */
+            .nav-links { display: none; } 
+            .logo-nav { max-height: 70px; } /* Adaptación para que no ocupe media pantalla en el celu */
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; letter-spacing: 3px; }
             h2 { font-size: 2.2rem; }
@@ -348,6 +348,7 @@
             .blurred-block { padding: 35px; }
             .grid-benefits { grid-template-columns: 1fr; gap: 30px; text-align: left;}
             .client-list li { font-size: 1rem; }
+            .logo-footer { max-height: 100px; }
         }
 
     </style>
